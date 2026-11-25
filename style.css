@@ -4,7 +4,7 @@ body {
     justify-items: center;
     min-height: 100vh;
     margin: 0;
-    background: #171717;
+    background: #adadad;
     font: 20px system-ui;
 }
 
@@ -22,12 +22,25 @@ body {
     background: radial-gradient(circle at 35% 30%, #ff6b5e, #d80f0f 60%);
     box-shadow: 0 8px 0 #8a0707, 0 12px 15px rgb(0 0 0 / 35%);
     cursor: pointer;
-    transition: transform 80ms, box-shadow 80msl
+    transition: transform 80ms, box-shadow 80ms;
 
 }
 
 #buttongrid button:active {
     transform: translateY(6px);
     box-shadow: 0 2px 0 #8a0707, 0 4px 8px rgb(0 0 0 / 35%);
-    
+
+}
+
+h1 {
+    color: #ff2222;
+    font-family: sans-serif;
+    font-size: 40px;
+}
+
+#message {
+    color: white;
+    font-size: 20px;
+    font-family: monospace;
+    margin: 30px 100px;
 }
