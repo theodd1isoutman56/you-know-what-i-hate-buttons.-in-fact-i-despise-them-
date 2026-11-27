@@ -54,14 +54,22 @@ for (let i = 0; i < 100; i++) {
                 message.textContent = ("DO YOU NOT REALISE WHAT YOUVE DON-")
             }, 10000))
 
-            timeout.push(setTimeout(() => {
-                document.getElementById("buttongrid").style.display = "none";
-                document.getElementById("message").style.display="none";
-                document.querySelector("h1").style.display ='none';
-                document.querySelector("h2").style.display='none';
-                document.getElementById("gameover").style.display="block";
 
-            }, 11500));
+            timeout.push(setTimeout(() => {
+                const flash = document.getElementById("flash")
+                flash.classList.remove("active");
+                void flash.offsetWidth;
+                flash.classList.add("active");
+                setTimeout(() => {
+                    grid.style.display='none';
+                    message.style.display='none';
+                    document.querySelector("h1").style.display ='none';
+                    document.querySelector("h2").style.display='none';
+                    document.getElementById("joever").style.display="block";
+
+            }, 300);
+         }, 11500));
+            
 
         }
     })

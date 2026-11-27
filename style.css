@@ -48,3 +48,28 @@ h1 {
 #joever {
     display: none;
 }
+
+/* for the flashbang, ineeded to use ai to help me a bit, since i dont know how to use keyframe and animations and stuff. i also did a bit of my own research to i know how to approach animations better next time!!! :P */
+
+#flash {
+    position: fixed;
+    inset: 0;
+    background:white;
+    opacity : 0;
+    pointer-events: none;
+    z-index: 9999;
+
+}
+
+#flash.active {
+    animation: flash 1s forwards;
+}
+
+@keyframes flash {
+    0%, 40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
