@@ -6,7 +6,7 @@ const wrong = new Audio("wrong.mp3")
 const clicky = new Audio("click.mp3")
 const right = new Audio ("tada.mp3")
 const flashbang = new Audio("flashbang.mp3")
-
+const eas=new Audio("eas.mp3")
 let timeout = [];
 for (let i = 0; i < 100; i++) {
     const button = document.createElement("button");
@@ -22,6 +22,7 @@ for (let i = 0; i < 100; i++) {
         clicky.currentTime=0;
         clicky.play();
         if (i === winningbutton) {
+
             right.currentTime=0;
             right.play();
             grid.style.display='none';
@@ -68,6 +69,17 @@ for (let i = 0; i < 100; i++) {
 
 
             timeout.push(setTimeout(() => {
+                eas.currentTime=0;
+                eas.play()
+                let easy=1;
+                eas.onended=() => {
+                    if (easy<3) {
+                        easy++;
+                        eascurrentTime=0;
+                        eas.play();
+                    }
+                };
+
                 flashbang.currentTime=0;
                 flashbang.play()
                 const flash = document.getElementById("flash")
