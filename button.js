@@ -5,7 +5,7 @@ const message = document.getElementById("message");
 const talk = new Audio("talk.wav");
 talk.volume = 0.25
 function typewriter(text, speed=40) {
-    message.textContent = "";
+    message.textContent="";
     let i=0;
     const typing=setInterval(() => {
         message.textContent += text.charAt(i); //i used some ai round these parts since i didnt know how to make a typewriter writing effect... ive learned how to do it know tho :P
@@ -55,35 +55,35 @@ for (let i = 0; i < 100; i++) {
             timeout.forEach(clearTimeout);
             timeout=[];
 
-            message.textContent = (" ");
+            typewriter(" ");
             timeout.push(setTimeout(() => {
-                message.textContent = ("YOU")
+                typewriter("YOU")
             }, 7000));
 
             timeout.push(setTimeout(() => {
-                message.textContent = ("oh my god OH MY GOD")
+                typewriter("oh my god OH MY GOD")
             
             }, 4500))
 
             timeout.push(setTimeout(() => {
-                message.textContent = ("NO NO NO NO NO ")
+                typewriter("NO NO NO NO NO ")
             }, 6000))
 
             timeout.push(setTimeout(() => {
-                message.textContent = ("wait")
+                typewriter("wait")
             }, 2500))
 
             timeout.push(setTimeout(() => {
-                message.textContent = ("FREAKING")
+                typewriter("FREAKING")
             
             }, 8000))
 
             timeout.push(setTimeout(() => {
-                message.textContent = ("MORON.")
+                typewriter("MORON.")
             }, 9000))
 
             timeout.push(setTimeout(() => {
-                message.textContent = ("DO YOU NOT REALISE WHAT YOUVE DON-")
+                typewriter("DO YOU NOT REALISE WHAT YOUVE DON-")
             }, 10000))
 
 
@@ -126,6 +126,7 @@ start.addEventListener("click", () => {
     document.getElementById("message").style.display='block';
     buttonlock = true;
     typewriter("You've been selected for a not so secret government mission. Aliens, Nukes, Tsunamis, Kanye West, you name it, they're ALL coming after you, and life as a whole. But fret not! One of those buttons instantly saves humanity. I have no clue which, but one of them does. Its your job to pick. Just so you know, if you pick the wrong button, you will be held criminally liable for all forthcoming damage caused by the other disasters, and will be promptly executed, tortured, or offered as a sacrifice. No pressure!", 55)
+    
     document.getElementById("title").style.display='block';
     document.getElementById("subtitle").style.display='block';
     grid.style.display='grid';
