@@ -125,7 +125,7 @@ start.addEventListener("click", () => {
     document.getElementById("main").style.display='none';
     document.getElementById("message").style.display='block';
     buttonlock = true;
-    typewriter("You've been selected for a not so secret government mission. Aliens, Nukes, Tsunamis, Kanye West, you name it, they're ALL coming after you, and life as a whole. But fret not! One of those buttons instantly saves humanity. I have no clue which, but one of them does. Its your job to pick. Just so you know, if you pick the wrong button, you will be held criminally liable for all forthcoming damage caused by the other disasters, and will be promptly executed, tortured, or offered as a sacrifice. No pressure!", 55)
+    typewriter("You've been selected for a not so secret government mission. Aliens, Nukes, Tsunamis, Kanye West, you name it, they're ALL coming after you, and life as a whole. But fret not! One of those buttons instantly saves humanity. I have no clue which, but one of them does. Its your job to pick. Just so you know, if you pick the wrong button, you WILL be held criminally liable for all forthcoming damage caused by the other disasters, and WILL be promptly executed, tortured, and/or offered as a sacrifice. No pressure!", 55)
     
     document.getElementById("title").style.display='block';
     document.getElementById("subtitle").style.display='block';
