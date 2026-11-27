@@ -2,11 +2,30 @@ let buttonlock=false
 const grid = document.getElementById("buttongrid")
 const winningbutton = Math.floor(Math.random() * 100);
 const message = document.getElementById("message");
+const talk = new Audio("talk.wav");
+talk.volume = 0.25
+function typewriter(text, speed=40) {
+    message.textContent = "";
+    let i=0;
+    const typing=setInterval(() => {
+        message.textContent += text.charAt(i); //i used some ai round these parts since i didnt know how to make a typewriter writing effect... ive learned how to do it know tho :P
+        talk.currentTime=0;
+        talk.play()
+        i++;
+
+        if (i >= text.length) {
+            clearInterval(typing);
+            buttonlock=false;
+        }
+    }, speed);
+}
+
 const wrong = new Audio("wrong.mp3")
 const clicky = new Audio("click.mp3")
 const right = new Audio ("tada.mp3")
 const flashbang = new Audio("flashbang.mp3")
 const eas=new Audio("eas.mp3")
+const start = document.getElementById("start");
 let timeout = [];
 for (let i = 0; i < 100; i++) {
     const button = document.createElement("button");
@@ -75,7 +94,7 @@ for (let i = 0; i < 100; i++) {
                 eas.onended=() => {
                     if (easy<3) {
                         easy++;
-                        eascurrentTime=0;
+                        eas.currentTime=0;
                         eas.play();
                     }
                 };
@@ -101,3 +120,13 @@ for (let i = 0; i < 100; i++) {
     })
     grid.appendChild(button);
 }
+
+start.addEventListener("click", () => {
+    document.getElementById("main").style.display='none';
+    document.getElementById("message").style.display='block';
+    buttonlock = true;
+    typewriter("You've been selected for a not so secret government mission. Aliens, Nukes, Tsunamis, Kanye West, you name it, they're ALL coming after you, and life as a whole. But fret not! One of those buttons instantly saves humanity. I have no clue which, but one of them does. Its your job to pick. Just so you know, if you pick the wrong button, you will be held criminally liable for all forthcoming damage caused by the other disasters, and will be promptly executed, tortured, or offered as a sacrifice. No pressure!", 55)
+    document.getElementById("title").style.display='block';
+    document.getElementById("subtitle").style.display='block';
+    grid.style.display='grid';
+});

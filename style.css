@@ -4,8 +4,8 @@ body {
     justify-items: center;
     min-height: 100vh;
     margin: 0;
-    background: #adadad;
-    font: 20px system-ui;
+    background: #658a96;
+    font: 20px times-new-roman;
 }
 
 #buttongrid {
@@ -66,6 +66,7 @@ h1 {
 }
 
 #flash.active {
+    display:block;
     animation: flash 5s forwards;
 }
 
@@ -76,4 +77,23 @@ h1 {
     100% {
         opacity: 0;
     }
+}
+
+#main {
+    text-align: center;
+}
+
+#message,
+#title,
+#subtitle,
+#buttongrid,
+#joever,
+#yay,
+#flash {
+    display:none;
+}
+
+#main {
+    display:block;
+    text-align: center;
 }
