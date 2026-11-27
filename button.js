@@ -11,6 +11,11 @@ let timeout = [];
 for (let i = 0; i < 100; i++) {
     const button = document.createElement("button");
     button.id = "button-" + i;
+
+    if (i==winningbutton) {
+        button.style.background = 'green';
+    }
+
     button.addEventListener("click", () => {
         if (buttonlock) return;
         buttonlock = true;
@@ -19,7 +24,11 @@ for (let i = 0; i < 100; i++) {
         if (i === winningbutton) {
             right.currentTime=0;
             right.play();
-            message.textContent=("HUMANITY HAS BEEN SAVED");
+            grid.style.display='none';
+            message.style.display='none';
+            document.getElementById("title").style.display = "none";
+            document.getElementById("subtitle").style.display = "none";
+            document.getElementById("yay").style.display="block";
         } else {
             wrong.currentTime=0;
             wrong.play()
