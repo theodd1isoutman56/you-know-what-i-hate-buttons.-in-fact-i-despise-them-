@@ -14,7 +14,7 @@ for (let i = 0; i < 100; i++) {
         clicky.currentTime=0;
         clicky.play();
         if (i === winningbutton) {
-            right.currenTime=0;
+            right.currentTime=0;
             right.play();
             message.textContent=("HUMANITY HAS BEEN SAVED");
         } else {
@@ -54,7 +54,15 @@ for (let i = 0; i < 100; i++) {
                 message.textContent = ("DO YOU NOT REALISE WHAT YOUVE DON-")
             }, 10000))
 
-            
+            timeout.push(setTimeout(() => {
+                document.getElementById("buttongrid").style.display = "none";
+                document.getElementById("message").style.display="none";
+                document.querySelector("h1").style.display ='none';
+                document.querySelector("h2").style.display='none';
+                document.getElementById("gameover").style.display="block";
+
+            }, 11500));
+
         }
     })
     grid.appendChild(button);
