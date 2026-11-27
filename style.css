@@ -62,7 +62,7 @@ h1 {
 }
 
 #flash.active {
-    animation: flash 1s forwards;
+    animation: flash 5s forwards;
 }
 
 @keyframes flash {

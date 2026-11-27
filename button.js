@@ -1,16 +1,19 @@
+let buttonlock=false
 const grid = document.getElementById("buttongrid")
 const winningbutton = Math.floor(Math.random() * 100);
 const message = document.getElementById("message");
 const wrong = new Audio("wrong.mp3")
 const clicky = new Audio("click.mp3")
 const right = new Audio ("tada.mp3")
-
+const flashbang = new Audio("flashbang.mp3")
 
 let timeout = [];
 for (let i = 0; i < 100; i++) {
     const button = document.createElement("button");
     button.id = "button-" + i;
     button.addEventListener("click", () => {
+        if (buttonlock) return;
+        buttonlock = true;
         clicky.currentTime=0;
         clicky.play();
         if (i === winningbutton) {
@@ -56,6 +59,8 @@ for (let i = 0; i < 100; i++) {
 
 
             timeout.push(setTimeout(() => {
+                flashbang.currentTime=0;
+                flashbang.play()
                 const flash = document.getElementById("flash")
                 flash.classList.remove("active");
                 void flash.offsetWidth;
