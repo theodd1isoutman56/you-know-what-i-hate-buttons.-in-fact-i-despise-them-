@@ -44,3 +44,7 @@ h1 {
     font-family: monospace;
     margin: 30px 100px;
 }
+
+#joever {
+    display: none;
+}
