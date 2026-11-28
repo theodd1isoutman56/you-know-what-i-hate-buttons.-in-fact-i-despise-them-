@@ -123,9 +123,11 @@ for (let i = 0; i < 100; i++) {
 start.addEventListener("click", () => {
     document.getElementById("main").style.display='none';
     document.getElementById("message").style.display='block';
-    const intro = "You've been selected for a not so secret government mission. Aliens, Nukes, Tsunamis, Kanye West, you name it, they're ALL coming after you. But fret not! One of those buttons instantly saves humanity. I've got no idea how or why or which or when so dont even bother asking. Its your job to pick a button, and save us all. The fate of the human race, heck, life on earth is in YOUR hands.. Just so you know, if you pick the wrong button, you WILL be held criminally liable for all forthcoming damage caused by the other disasters, and WILL be promptly executed, tortured, and/or offered as a sacrifice. No pressure!"
+    const intro = "You've been selected for a not so secret government mission. Aliens, Nukes, Tsunamis, Kanye West, you name it, they're ALL coming after you. But fret not! One of those buttons instantly saves humanity. I've got no idea how or why or which or when so dont even bother asking. Its your job to pick a button, and save us all. The fate of the human race, heck, life on earth is in YOUR hands.."
+    const intro2 = "...Just so you know, if you pick the wrong button, you WILL be held criminally liable for all forthcoming damage caused by the other disasters, and WILL be promptly executed, tortured, and/or offered as a sacrifice. No pressure!"  
     typewriter(intro,60)
-    setTimeout(() => {buttonlock=false}, intro.length*60)
+    setTimeout(() => {typewriter(intro2, 60)}, 25500); 
+    setTimeout(() => {buttonlock=false}, 25000+intro2.length*60)
     document.getElementById("title").style.display='block';
     document.getElementById("subtitle").style.display='block';
     grid.style.display='grid';
